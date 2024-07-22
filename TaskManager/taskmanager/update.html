@@ -1,0 +1,78 @@
+<!-- <?php
+     include 'connect.php';
+    if(isset($_POST['submit'])){
+       $name=$_POST['name'];
+       $task=$_POST['task_name'];
+       $date=$_POST['date'];
+       $status=$_POST['status'];
+
+
+       $sql="insert into `task`(`name`,`task_name`,`date`,`status`)
+       values('$name','$task','$date','$status' )";
+       $result=mysqli_query($con,$sql);
+       if($result){
+       echo "Data inserted successfully";
+       header('location:display.php');
+
+       }
+       else{
+        die(mysqli_error($con));
+       }
+    }
+
+?> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./styles/user.css">
+  <title>Task Manager</title>
+</head>
+
+<body>
+  <div class="container my-5">
+    <form method="post" title="form">
+
+
+
+      <div class="mb-3">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="Type your name" name="name" autocomplete="off" />
+      </div>
+      <div class="mb-3">
+        <label>Task-Name</label>
+        <input type="text" class="form-control" placeholder="Type your task-name" name="task_name" autocomplete="off" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Date</label>
+        <input type="date" class="form-control input1" id="exampleInputName" placeholder="date" name="date" />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Type your task" name="status">
+        <!-- <select name="status">
+    <option value="completed">Completed</option>
+    <option value="pending">Pending</option>
+    <option value="in progress">In Progress</option>
+  </select> -->
+
+        <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder= "Type your task" name="status" > -->
+      </div>
+      <button class="button-89" role="button" name="submit">Submit</button>
+
+      <!-- <button type="submit" class="btn btn-primary" name="submit">Submit</button> -->
+  </div>
+  </div>
+  </form>
+</body>
+
+</html>
